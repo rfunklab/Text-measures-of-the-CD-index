@@ -1,0 +1,6 @@
+data_above <- read.csv("data_above.csv")
+data_below <- read.csv("data_below.csv")
+head(data_above)
+head(data_below)
+model <- lm(cd_5 ~ absjsdis_nbersub_sp_tok_ttm0 + absjsdis_nbersub_sp_pos_ttm0 + factor(application_year) -1 + factor(field_nber_category_id) + factor(abs_ntokens_sp_tok), data=data_above)
+summary(model)
